@@ -1,0 +1,12 @@
+version: 3
+services:
+    mtproxy:
+        ports:
+            - '8000:443'
+        container_name: mtproto_beta
+        volumes:
+            - 'proxy-config:/data'
+        environment:
+            - SECRET=7345685ebe0df1ca598e99707a9734df
+            - WORKERS=16
+        image: 'khodok.ru:5000/mtproxy:build19'
